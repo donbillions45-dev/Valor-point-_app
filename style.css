@@ -1,0 +1,310 @@
+ /* style.css */
+
+:root {
+    --primary-color: #0D3B66; /* Deep Blue */
+    --accent-color: #F4D35E; /* Gold */
+    --background-color: #FFFFFF; /* White */
+    --text-color: #333;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+}
+
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+    max-width: 450px; /* Limits the width on larger screens */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.input-group label {
+    display: block; /* Make label take its own line */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+/* Focus style for input fields */
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: var(--accent-color);
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(244, 211, 94, 0.3); /* Custom focus ring */
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    margin-top: 15px;
+}
+
+.primary-btn:hover {
+    background-color: #082a4d; /* Darker shade of primary on hover */
+}
+
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.message.error {
+    background-color: #f8d7da; /* Light red background */
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
+
+.message.success {
+    background-color: #d4edda; /* Light green background */
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+p {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+        margin: 15px; /* Add some margin on smaller screens */
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .input-group input {
+        font-size: 15px;
+    }
+    .btn {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+.dashboard-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.dashboard-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.balance-display {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#referralLink {
+    width: calc(100% - 100px); /* Adjust width to make space for copy button */
+    display: inline-block;
+    vertical-align: middle;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.copy-btn {
+    width: 90px; /* Fixed width for copy button */
+    display: inline-block;
+    vertical-align: middle;
+    padding: 12px 0;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.copy-btn:hover {
+    background-color: #e6c556; /* Slightly darker gold */
+}
+
+#referredUsersList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#referredUsersList li {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.logout-btn {
+    background-color: #dc3545; /* Red for logout */
+    margin-top: 30px;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Secondary button style (for Withdraw Request, etc.) */
+.secondary-btn {
+    background-color: #6c757d; /* Grey */
+    color: #fff;
+    margin-top: 10px;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Adjustments for input-group containing referral link and copy button */
+.dashboard-section .input-group {
+    display: flex;
+    margin-bottom: 0; /* Remove bottom margin from this input group */
+}
+.dashboard-section .input-group input {
+    flex-grow: 1; /* Allow input to take available space */
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.dashboard-section .input-group .btn {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    width: auto;
+    min-width: 90px; /* Ensure button has a minimum width */
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+/* Responsive adjustment for input-group within dashboard section */
+@media (max-width: 600px) {
+    .dashboard-section .input-group {
+        flex-direction: column; /* Stack input and button vertically */
+    }
+    .dashboard-section .input-group input,
+    .dashboard-section .input-group .btn {
+        width: 100%;
+        border-radius: 5px; /* Reapply full border-radius */
+        margin-top: 5px; /* Space between stacked elements */
+    }
+    .dashboard-section .input-group input {
+        margin-bottom: 5px;
+    }
+}
+    .faq-section, .section-content {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .faq-section h2, .section-content h2 {
+        color: var(--primary-color);
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+    }
+
+    .faq-section p, .section-content p, .section-content ul {
+        color: #555;
+        line-height: 1.6;
+        font-size: 0.95em;
+    }
+
+    .section-content ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    .section-content ul li {
+        margin-bottom: 5px;
+    }
+
+    .small-text {
+        font-size: 0.85em;
+        margin-top: 30px;
+        color: #777;
+    }
+
+    .small-text a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .small-text a:hover {
+        text-decoration: underline;
+    }
+    ```

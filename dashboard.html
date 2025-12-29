@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValorPoint - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 id="welcomeMessage">Welcome, User!</h1>
+            <p>Here's your ValorPoint summary:</p>
+
+            <div class="dashboard-section">
+                <h2>Your Account Balance</h2>
+                <p class="balance-display">₦<span id="balance">0</span></p>
+                <!-- Withdraw Request Form - Placeholder for now -->
+                <button class="btn secondary-btn" id="withdrawBtn">Request Withdrawal (Coming Soon)</button>
+            </div>
+
+            <div class="dashboard-section">
+                <h2>Your Referral Link</h2>
+                <div class="input-group">
+                    <input type="text" id="referralLink" value="Loading..." readonly>
+                    <button class="btn copy-btn" id="copyReferralLinkBtn">Copy</button>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <h2>Your Referrals (<span id="totalReferrals">0</span>)</h2>
+                <ul id="referredUsersList">
+                    <!-- Referred users will be loaded here by JavaScript -->
+                    <li>No referrals yet. Share your link!</li>
+                </ul>
+            </div>
+
+            <button class="btn primary-btn logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <!-- Link to the dashboard JavaScript module -->
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>
